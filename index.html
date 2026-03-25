@@ -72,12 +72,12 @@ button {
 <div class="hearts" id="hearts"></div>
 
 <div class="card">
-  <!-- 🎂 LOCAL GIF -->
-  <img src="cake.gif" class="cake">
+  <!-- 🎂 GitHub RAW GIF (IMPORTANT) -->
+  <img src="https://raw.githubusercontent.com/ShivP9995/birthday/main/cake.gif" class="cake">
   
-  <h1 class="text">Happy Birthday My Love ❤️</h1>
+  <h1 class="text">Happy Birthday My Love ♥</h1>
   
-  <button onclick="playMusic()">Play Music 🎵</button>
+  <button onclick="playMusic()">Play Music</button>
 </div>
 
 <audio id="music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
@@ -89,7 +89,7 @@ let container = document.getElementById("hearts");
 for (let i = 0; i < 40; i++) {
   let heart = document.createElement("div");
   heart.className = "heart";
-  heart.innerHTML = "❤️";
+  heart.innerHTML = "♥";
 
   heart.style.left = Math.random() * 100 + "vw";
   heart.style.fontSize = (15 + Math.random() * 25) + "px";
@@ -99,26 +99,6 @@ for (let i = 0; i < 40; i++) {
 }
 
 // 🎵 Music
-function playMusic() {
-  document.getElementById("music").play();
-}
-</script>
-
-</body>
-</html>
-for (let i = 0; i < 30; i++) {
-  let heart = document.createElement("div");
-  heart.classList.add("heart");
-  heart.innerHTML = "â¤ï¸";
-
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = (3 + Math.random() * 5) + "s";
-  heart.style.fontSize = (15 + Math.random() * 25) + "px";
-
-  heartsContainer.appendChild(heart);
-}
-
-// ðŸŽµ Music
 function playMusic() {
   document.getElementById("music").play();
 }
