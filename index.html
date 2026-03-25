@@ -13,34 +13,22 @@ body {
   font-family: cursive;
 }
 
-/* â¤ï¸ Falling hearts container */
+/* ❤️ Hearts animation */
 .hearts {
   position: fixed;
   width: 100%;
   height: 100%;
-  top: 0;
-  left: 0;
-  pointer-events: none;
 }
 
-/* â¤ï¸ Each heart */
 .heart {
   position: absolute;
   color: red;
-  font-size: 20px;
   animation: fall linear infinite;
 }
 
-/* â¤ï¸ Animation */
 @keyframes fall {
-  0% {
-    transform: translateY(-10%);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(110vh);
-    opacity: 0;
-  }
+  0% { transform: translateY(-10%); opacity: 1; }
+  100% { transform: translateY(110vh); opacity: 0; }
 }
 
 /* Card */
@@ -54,55 +42,70 @@ body {
   padding: 40px;
   border-radius: 20px;
   text-align: center;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
 }
 
-/* ðŸŽ‚ Cake */
+/* Cake */
 .cake {
   width: 150px;
-  margin-bottom: 20px;
 }
 
 /* Text */
 .text {
   color: #c2185b;
   font-size: 2.5em;
-  font-weight: 700;
-  text-shadow: 2px 2px 10px rgba(255,255,255,0.7);
 }
 
 /* Button */
 button {
   margin-top: 20px;
   padding: 10px 20px;
-  border: none;
   background: #c2185b;
   color: white;
+  border: none;
   border-radius: 10px;
-  cursor: pointer;
 }
 </style>
-
 </head>
+
 <body>
 
-<!-- â¤ï¸ Hearts -->
 <div class="hearts" id="hearts"></div>
 
-<!-- ðŸŽ‚ Card -->
 <div class="card">
+  <!-- 🎂 LOCAL GIF -->
   <img src="cake.gif" class="cake">
-  <h1 class="text">Happy Birthday My Love â¤ï¸</h1>
-  <button onclick="playMusic()">Play Music ðŸŽµ</button>
+  
+  <h1 class="text">Happy Birthday My Love ❤️</h1>
+  
+  <button onclick="playMusic()">Play Music 🎵</button>
 </div>
 
-<!-- ðŸŽµ Music -->
 <audio id="music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
 
 <script>
-// â¤ï¸ Generate falling hearts
-let heartsContainer = document.getElementById("hearts");
+// ❤️ Hearts generate
+let container = document.getElementById("hearts");
 
+for (let i = 0; i < 40; i++) {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (15 + Math.random() * 25) + "px";
+  heart.style.animationDuration = (3 + Math.random() * 5) + "s";
+
+  container.appendChild(heart);
+}
+
+// 🎵 Music
+function playMusic() {
+  document.getElementById("music").play();
+}
+</script>
+
+</body>
+</html>
 for (let i = 0; i < 30; i++) {
   let heart = document.createElement("div");
   heart.classList.add("heart");
