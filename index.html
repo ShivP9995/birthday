@@ -63,6 +63,7 @@ button {
   color: white;
   border: none;
   border-radius: 10px;
+  cursor: pointer;
 }
 </style>
 </head>
@@ -72,15 +73,16 @@ button {
 <div class="hearts" id="hearts"></div>
 
 <div class="card">
-  <!-- 🎂 GitHub RAW GIF (IMPORTANT) -->
-  <img src="https://raw.githubusercontent.com/ShivP9995/birthday/main/cake.gif" class="cake">
+  <!-- 🎂 Cake -->
+  <img src="cake.gif" class="cake">
   
   <h1 class="text">Happy Birthday My Love ♥</h1>
   
-  <button onclick="playMusic()">Play Music</button>
+  <button onclick="playMusic()">Play Music 🎵</button>
 </div>
 
-<audio id="music" happy birthday.mp3"></audio>
+<!-- 🎵 MUSIC -->
+<audio id="music" src="birthday.mp3"></audio>
 
 <script>
 // ❤️ Hearts generate
@@ -98,9 +100,10 @@ for (let i = 0; i < 40; i++) {
   container.appendChild(heart);
 }
 
-// 🎵 Music
+// 🎵 Music play
 function playMusic() {
-  document.getElementById("music").play();
+  let music = document.getElementById("music");
+  music.play();
 }
 </script>
 
