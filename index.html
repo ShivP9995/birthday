@@ -77,10 +77,11 @@ button {
   
   <h1 class="text">Happy Birthday My Love ♥</h1>
   
-  <button onclick="playMusic()">Play Music</button>
 </div>
 
-<audio id="music" src="https://raw.githubusercontent.com/ShivP9995/birthday/main/birthday.mp3"></audio>
+  <button onclick="playMusic()">Play Music</button>
+
+<audio id="music"> <source src="https://raw.githubusercontent.com/ShivP9995/birthday/main/birthday.mp3" type="audio/mpeg"> </audio>
 
 <script>
 // ❤️ Hearts generate
@@ -100,7 +101,11 @@ for (let i = 0; i < 40; i++) {
 
 // 🎵 Music
 function playMusic() {
-  document.getElementById("music").play();
+   const audio = document.getElementById("music");
+   audio.play().catch(function(error) {
+      console.log("Music play failed:", error);
+      alert("Music is loading, please wait...");
+   });
 }
 </script>
 
