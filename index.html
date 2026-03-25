@@ -1,21 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Birthday</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Birthday</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f8b6c1, #f48fb1);
+  overflow: hidden;
+  font-family: cursive;
+}
+
+/* ❤️ Falling hearts container */
+.hearts {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+/* ❤️ Each heart */
+.heart {
+  position: absolute;
+  color: red;
+  font-size: 20px;
+  animation: fall linear infinite;
+}
+
+/* ❤️ Animation */
+@keyframes fall {
+  0% {
+    transform: translateY(-10%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+}
+
+/* Card */
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff40;
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+/* 🎂 Cake */
+.cake {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+/* Text */
+.text {
+  color: #c2185b;
+  font-size: 2.5em;
+  font-weight: 700;
+  text-shadow: 2px 2px 10px rgba(255,255,255,0.7);
+}
+
+/* Button */
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background: #c2185b;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+</style>
+
 </head>
 <body>
 
+<!-- ❤️ Hearts -->
+<div class="hearts" id="hearts"></div>
+
+<!-- 🎂 Card -->
 <div class="card">
   <img src="https://media.tenor.com/6R7nS9dZ5-AAAAAC/cake.gif" class="cake">
   <h1 class="text">Happy Birthday My Love ❤️</h1>
   <button onclick="playMusic()">Play Music 🎵</button>
 </div>
 
-<audio id="music" src="music.mp3"></audio>
+<!-- 🎵 Music -->
+<audio id="music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
 
 <script>
+// ❤️ Generate falling hearts
+let heartsContainer = document.getElementById("hearts");
+
+for (let i = 0; i < 30; i++) {
+  let heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "❤️";
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDuration = (3 + Math.random() * 5) + "s";
+  heart.style.fontSize = (15 + Math.random() * 25) + "px";
+
+  heartsContainer.appendChild(heart);
+}
+
+// 🎵 Music
 function playMusic() {
   document.getElementById("music").play();
 }
