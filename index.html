@@ -13,7 +13,7 @@ body {
   font-family: cursive;
 }
 
-/* ❤️ Falling hearts container */
+/* â¤ï¸ Falling hearts container */
 .hearts {
   position: fixed;
   width: 100%;
@@ -23,7 +23,7 @@ body {
   pointer-events: none;
 }
 
-/* ❤️ Each heart */
+/* â¤ï¸ Each heart */
 .heart {
   position: absolute;
   color: red;
@@ -31,7 +31,7 @@ body {
   animation: fall linear infinite;
 }
 
-/* ❤️ Animation */
+/* â¤ï¸ Animation */
 @keyframes fall {
   0% {
     transform: translateY(-10%);
@@ -57,7 +57,7 @@ body {
   box-shadow: 0 10px 40px rgba(0,0,0,0.2);
 }
 
-/* 🎂 Cake */
+/* ðŸŽ‚ Cake */
 .cake {
   width: 150px;
   margin-bottom: 20px;
@@ -86,27 +86,27 @@ button {
 </head>
 <body>
 
-<!-- ❤️ Hearts -->
+<!-- â¤ï¸ Hearts -->
 <div class="hearts" id="hearts"></div>
 
-<!-- 🎂 Card -->
+<!-- ðŸŽ‚ Card -->
 <div class="card">
-  <img src="https://tenor.com/view/birthday-cake-mochi-mochi-peach-cat-gif-7935144640471707564" class="cake">
-  <h1 class="text">Happy Birthday My Love ❤️</h1>
-  <button onclick="playMusic()">Play Music 🎵</button>
+  <img src="https://media.tenor.com/6R7nS9dZ5-AAAAAC/cake.gif" class="cake">
+  <h1 class="text">Happy Birthday My Love â¤ï¸</h1>
+  <button onclick="playMusic()">Play Music ðŸŽµ</button>
 </div>
 
-<!-- 🎵 Music -->
+<!-- ðŸŽµ Music -->
 <audio id="music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
 
 <script>
-// ❤️ Generate falling hearts
+// â¤ï¸ Generate falling hearts
 let heartsContainer = document.getElementById("hearts");
 
 for (let i = 0; i < 30; i++) {
   let heart = document.createElement("div");
   heart.classList.add("heart");
-  heart.innerHTML = "❤️";
+  heart.innerHTML = "â¤ï¸";
 
   heart.style.left = Math.random() * 100 + "vw";
   heart.style.animationDuration = (3 + Math.random() * 5) + "s";
@@ -115,7 +115,7 @@ for (let i = 0; i < 30; i++) {
   heartsContainer.appendChild(heart);
 }
 
-// 🎵 Music
+// ðŸŽµ Music
 function playMusic() {
   document.getElementById("music").play();
 }
