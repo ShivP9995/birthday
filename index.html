@@ -1,10 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Birthday Toggle</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Celebration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+        }
+        h1 {
+            color: #ff69b4;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff1493;
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Birthday!</h1>
+    <audio id="birthdayAudio" preload="auto">
+        <source src="birthday.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <button onclick="toggleAudio()">Play/Pause</button>
     <script>
-        let audio = new Audio('birthday.mp3');
-        function togglePlayPause() {
+        const audio = document.getElementById('birthdayAudio');
+        function toggleAudio() {
             if (audio.paused) {
                 audio.play();
             } else {
@@ -12,8 +48,5 @@
             }
         }
     </script>
-</head>
-<body>
-    <button onclick="togglePlayPause()">Play/Pause Birthday Song</button>
 </body>
 </html>
