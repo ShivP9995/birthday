@@ -1,105 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Music Player</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+    <title>Birthday Toggle</title>
+    <script>
+        let audio = new Audio('birthday.mp3');
+        function togglePlayPause() {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
         }
-
-        .music-player {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 60px;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-        }
-
-        .music-title {
-            color: #ffffff;
-            font-size: 2em;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        button {
-            margin: 10px;
-            padding: 15px 40px;
-            background: #ff6b9d;
-            color: white;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            font-size: 1.2em;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
-        }
-
-        button:hover {
-            background: #ff4757;
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(255, 71, 87, 0.6);
-        }
-
-        button:active {
-            transform: scale(0.98);
-        }
-
-        audio {
-            display: none;
-        }
-
-        .status {
-            color: #ffffff;
-            margin-top: 20px;
-            font-size: 1em;
-            opacity: 0.8;
-        }
-    </style>
+    </script>
 </head>
 <body>
-
-<div class="music-player">
-    <div class="music-title">🎵 Music Player</div>
-    
-    <button onclick="playMusic()">▶️ Play Music</button>
-    <button onclick="pauseMusic()">⏸️ Pause</button>
-    
-    <audio id="music">
-        <source src="birthday.mp3" type="audio/mpeg">
-    </audio>
-    
-    <div class="status" id="status">Ready to play...</div>
-</div>
-
-<script>
-    const audio = document.getElementById("music");
-    const status = document.getElementById("status");
-
-    function playMusic() {
-        audio.play().then(() => {
-            status.innerHTML = "🎵 Now Playing...";
-        }).catch(error => {
-            status.innerHTML = "❌ Error: " + error.message;
-        });
-    }
-
-    function pauseMusic() {
-        audio.pause();
-        status.innerHTML = "⏸️ Paused";
-    }
-</script>
-
+    <button onclick="togglePlayPause()">Play/Pause Birthday Song</button>
 </body>
 </html>
