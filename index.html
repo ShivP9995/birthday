@@ -85,12 +85,11 @@ button:hover {
   
 </div>
 
-<button onclick="playMusic()">Play Music</button>
+<button onclick="playMusic()">🎵 Play Music</button>
 
-<!-- 🎵 Audio with fallback -->
-<audio controls id="music">
+<!-- 🎵 Audio (HIDDEN - बिना controls के) -->
+<audio id="music">
   <source src="birthday.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
 </audio>
 
 <script>
@@ -110,21 +109,24 @@ for (let i = 0; i < 40; i++) {
   container.appendChild(heart);
 }
 
-// 🎵 Music with better error handling
+// 🎵 Music Play/Pause Function
 function playMusic() {
    const audio = document.getElementById("music");
+   const button = event.target;
    
    if (audio.paused) {
      audio.play()
        .then(() => {
+         button.innerHTML = "⏸️ Pause Music";
          console.log("Music playing successfully");
        })
        .catch(function(error) {
          console.log("Music play failed:", error);
-         alert("⚠️ Unable to play music. Make sure birthday.mp3 is in the same folder as this HTML file.");
+         alert("Music failed to play. Please check the file.");
        });
    } else {
      audio.pause();
+     button.innerHTML = "🎵 Play Music";
    }
 }
 </script>
