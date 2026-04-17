@@ -89,7 +89,127 @@ button {
 
 <script>
 // 🎵 Music control
-const audio = document.getElementById('birthdayAudio');
+const audio = document.getElementById('<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Birthday</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f8b6c1, #f48fb1);
+  overflow: hidden;
+  font-family: cursive;
+}
+
+/* ❤️ Hearts animation */
+.hearts {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.heart {
+  position: absolute;
+  color: red;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-10%); opacity: 1; }
+  100% { transform: translateY(110vh); opacity: 0; }
+}
+
+/* Card */
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff40;
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+/* Cake */
+.cake {
+  width: 150px;
+}
+
+/* Text */
+.text {
+  color: #c2185b;
+  font-size: 2.5em;
+}
+
+/* Button */
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #c2185b;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hearts" id="hearts"></div>
+
+<div class="card">
+  <!-- 🎂 Cake GIF -->
+  <img src="https://raw.githubusercontent.com/ShivP9995/birthday/main/cake.gif" class="cake">
+  
+  <h1 class="text">Happy Birthday My Love ♥</h1>
+
+  <!-- ✅ Button inside card -->
+  <button onclick="toggleAudio()">Play / Pause</button>
+</div>
+
+<!-- ✅ Audio fixed -->
+<audio id="birthdayAudio" preload="auto">
+  <source src="birthday.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+// 🎵 Music control
+const audio = document.getElementById('birthday.mp3');
+
+function toggleAudio() {
+  if (audio.paused) {
+    audio.play().catch(() => {
+      alert("Tap again to play music");
+    });
+  } else {
+    audio.pause();
+  }
+}
+
+// ❤️ Hearts generate
+let container = document.getElementById("hearts");
+
+for (let i = 0; i < 40; i++) {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "♥";
+
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (15 + Math.random() * 25) + "px";
+  heart.style.animationDuration = (3 + Math.random() * 5) + "s";
+
+  container.appendChild(heart);
+}
+</script>
+
+</body>
+</html>o');
 
 function toggleAudio() {
   if (audio.paused) {
